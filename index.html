@@ -1,29 +1,110 @@
-<!DOCTYPE html5>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
 <head>
 	<title>Hit Me - User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script> 	<!--  FIREBASE-->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script> <!-- JQUERY -->
 	<script src="js/bootstrap.min.js"></script> <!--  BOOTSTRAP-->
-	<script src="js/user.js"></script> <!-- USER SCRIPT-->
+   	<script src="js/user.js"></script> <!-- USER SCRIPT-->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script> <!-- GOOGLE MAPS -->
+
 
 
     <!-- all the css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> <!--  BOOTSTRAP-->
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet" media="screen"> <!--  OWN MODERATIONS-->
 
 </head>
 <body>
-	<div id="messageDiv"></div>
+
+<div class="container">
+	<!--
+    <div id="messageDiv"></div>
 	<input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
     
-    <div id="geo"></div>
+    <hr /> -->
+    <div class="jumbotron">
+        <h1>Hit Me</h1>
+        <p>Welcome to Hit Me. Tell us what you're looking for, and we will see if we can get somebody to hit you with a good offer. Fill in the information below and hit Hit Me.</p>
+        <p>For optimal performance, please allow this site to determine your location.</p>
+    </div>
+   
 
-    <br/>
-    
-    <button id="findGeo">Get geolocation</button>
+   <form role="form">
+    <h3>Choose a category</h3>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsCategory" id="optionsRadios1" value="food" checked>
+            Food
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsCategory" id="optionsRadios2" value="entertainment">
+            Entertainment
+          </label>
+        </div>
+          <div class="radio">
+          <label>
+            <input type="radio" name="optionsCategory" id="optionsRadios3" value="shopping">
+            Shopping
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsCategory" id="optionsRadios4" value="free" >
+            Free stuff
+          </label>
+        </div>
 
+        <h3>How many people in your party?</h3>
+        <select id="numPeople" class="form-control" style="width:100px;">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <h3>Your location</h3>
+        <p id="whereareyou"></p>
+        
+       
+
+        <div id="map_canvas">
+
+        </div>
+
+        <div id="geolocation"> 
+
+        </div>
+
+        <h3>For how long time would you like to receive offers?</h3>
+        <select id="timeSpan" class="form-control" style="width:150px;">
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="120">2 hours</option>
+          <option value="300">5 hours</option>
+          <option value="rest">Rest of today</option>
+        </select>
+
+   </form>
+
+    <hr/>
+
+    <button id="createObject">Hit me!</button>
+
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery.js"></script>
