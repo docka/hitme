@@ -1,5 +1,28 @@
 $(document).ready(function() {
 
+	//GET USER INPUT
+
+	//BUTTONS FADING
+	$("#chooseFood").on("click", function(){
+		$("#chooseEvent").fadeOut();
+		$("#chooseBars").fadeOut();
+		$("#chooseOther").fadeOut();
+
+	});
+
+	$("#chooseEvent").on("click", function(){
+		$("#chooseFood").fadeOut();
+		$("#chooseBars").fadeOut();
+		$("#chooseOther").fadeOut();
+
+	});
+
+	//Transformation
+
+
+
+	
+
 	var myDataRef = new Firebase("https://hitme1.firebaseio.com/");
 		$("#messageInput").keypress(function(e){
 			if (e.keyCode == 13){

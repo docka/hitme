@@ -1,4 +1,46 @@
-body{
-	background-color: #cccccc;
+
+
+body { 
+  background: url(http://upload.wikimedia.org/wikipedia/commons/8/8c/GamlaStan_from_Katarinahissen_Stockholm_Swe.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
+
+.logo {
+	font-size:70px;
+	font-weight:bold;
+	color:white;
+	font-family: 'La Belle Aurore', cursive;
+	margin-left: 20px
+}
+.stylish {
+	display:block;width:150px;
+	height:150px;border-radius:132px;border:4px double #000;
+	font-size:50px; 
+	px;color:#fff;line-height:100px;
+	text-align:center;text-decoration:none;text-shadow:0 1px 0 #fff; font-family: 'La Belle Aurore', cursive;
+	background:#000
+}
+.stylish:hover{
+	color:#000;
+	text-decoration:none;
+	background:#fff
+}
+
+
+
+.navbar-collapse.collapse {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.row {
+	position: center; 
+}
+
+
