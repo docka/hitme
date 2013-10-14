@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-
 <head>
-	<title>Hit Me - Business</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- all the script -->
+	<title>Hit Me - List of offers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script> 	<!--  FIREBASE-->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script> <!-- JQUERY -->
 	<script src="js/bootstrap.min.js"></script> <!--  BOOTSTRAP-->
-	<script src="js/biz.js"></script> <!-- USER SCRIPT-->
-	<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script> <!-- GOOGLE MAPS -->
+   	<script src="js/offer.js"></script> <!-- USER SCRIPT-->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script> <!-- GOOGLE MAPS -->
+
 
 
     <!-- all the css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> <!--  BOOTSTRAP-->
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet" media="screen"> <!--  OWN MODERATIONS-->
 
 </head>
 <body>
 <div class="container">
-	<div id="requestDiv"></div>
+	<h2>Your request has been sent</h2>
+  <p>Now we play the waiting game...</p>
 
-	<br /> <br />
-	
+  <div id="offers">
 
-	<button id="getRequests">Who's hungry?</button>
+  </div>
 
 
-	<h1>Food request</h1>
-	<div id="foodRequests"> </div>
-	<br>
-	<div id="map_canvas">
+
 
 
 </div>
-
-</div>
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery.js"></script>
-
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

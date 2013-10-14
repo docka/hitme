@@ -1,27 +1,14 @@
 $(document).ready(function() {
 
-
-    /* THIS BLOCK IS LISTENING FOR CHAT MESSAGES TO THE BIZ
-	var myDataRef = new Firebase("https://hitme1.firebaseio.com/");
-
-
-	//listener for incoming messages
-	 myDataRef.on("child_added", function(snapshot){
-     	var message = snapshot.val();
-     	if (message.name === "Tue"){
-     		displayChatMessage(message.name, message.text); 
-     	}
-     	else{
-       		// not for me .. displayChatMessage("anonymous", "not for me");
-     	}
-     	
-     	
-      });
-
-	 function displayChatMessage(name,text){
-	 	$("<div/>").text(text).prepend($("<em/>").text(name+": ")).appendTo($("#requestDiv"));
-	 	$("#requestDiv")[0].scrollTop = $("#requestDiv")[0].scrollHeight;
-	 }*/
+    //initialize map
+    var map;
+    var map_options = {
+        center: new google.maps.LatLng(59.32802898755335,18.04190864982911), 
+        zoom: 12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+   
+    map = new google.maps.Map($('#map_canvas')[0], map_options); //don't understand the need for [0], but it won't work without it
 
 
     //THIS BLOCK IS LISTENING FOR FOOD REQUESTS
@@ -46,6 +33,7 @@ $(document).ready(function() {
                 html += "</div>";
 
                 $("#foodRequests").append(html);
+                addMarker(message.latitude, message.longitude, message.numPeople);
                 //displayChatMessage(message.numPeople, message.text); 
             }
             else{
@@ -56,16 +44,33 @@ $(document).ready(function() {
         }
 
         else{
-            //this request is in the past and will be ignored
-
+            // request is in the past and will be ignored
         }
         
       });
 
+    function addMarker(lat, lon, numPeople){
+
+        var myLatlng = new google.maps.LatLng(lat,lon);
+        var mark = "pics/marker_" + numPeople + ".png";
+
+        marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: numPeople,
+              icon: mark
+        });
+
+    }
+
+        
+
+
      //SEND OFFERS
     $(document).on("click", ".sendoffers", function(){
-        console.log(this.id);
-
+        var userId = this.id.substring(2,this.id.length);
+        console.log("this.id: " + this.id + ", userId: " + userId);
+        createOffer(userId, 3533, "Flippin' Burger", "Götgatan 33", 59.31408989, 18.0901262275532, "Gratis dessert", 30, null);
 
     });
 
@@ -79,7 +84,33 @@ $(document).ready(function() {
 
 
      //var responseRef = new Firebase("https://hitme-food.firebaseio.com/messages/89234jhkasdf(#4jejrhwerjkwr");
-  
+    //write offer to database
+    function createOffer(userID, bizID, bizName, bizAddress, latitude, longitude, offer, validFor, validUntil){
+    
+        try
+          {
+            var myFoodDataRef = new Firebase("https://hitme-offer.firebaseio.com/" + userID);
+            myFoodDataRef.push(
+                {
+                    userID: userID,
+                    bizID: bizID,
+                    bizName: bizName,
+                    bizAddress: bizAddress,
+                    latitude: latitude,
+                    longitude: longitude,
+                    offer: offer,
+                    validFor: validFor,
+                    validUntil: validUntil
+                }
+            );
+            $("#"+ userID).fadeOut();
+          }
+        catch(err)
+          {
+            console.log("Couldn't write to Firebase: " + err.message);
+          }
+        }
+
 
 
 

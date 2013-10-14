@@ -58,6 +58,7 @@ $(document).ready(function() {
 		}
 
 		sendToServer(cat, nPeople, lat, lon, minutes);
+		//window.location.href = "offerlist.html";
 	}
 
 	function sendToServer(category, people, latitude, longitude, minutes){
@@ -77,13 +78,17 @@ $(document).ready(function() {
 					longitude: longitude,
 					timestamp: milliDate,
 					userID: userID
+				}, function(){
+					window.location.href = "offerlist.html";
 				}
 			);
+		  		
 		  }
 		catch(err)
 		  {
 		  	console.log("Couldn't write to Firebase: " + err.message);
 		  }
+
 		}
 
 
@@ -111,8 +116,6 @@ $(document).ready(function() {
 
 	//if geolocation was a success, find and show position
 	function showLocation(position){
-		//var lat;
-		//var lon;
 		var accu;
 		var map_options;
 		var txt;
