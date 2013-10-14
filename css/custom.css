@@ -1,8 +1,7 @@
 
 
-<<<<<<< HEAD
 body { 
-  background: url(http://upload.wikimedia.org/wikipedia/commons/8/8c/GamlaStan_from_Katarinahissen_Stockholm_Swe.jpg) no-repeat center center fixed; 
+  background: url("../pics/stockholm.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -45,11 +44,11 @@ body {
 }
 
 
-=======
+
 #map_canvas{
 	width: 500px;
 	height: 400px;
 	border: 1px solid black;
 
 }
->>>>>>> b3bf6d3f20f4455984f927afad6ea13590ffdb6e
+
