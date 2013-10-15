@@ -34,13 +34,11 @@ body {
 }
 
 
-<<<<<<< HEAD
-.circle-container img { display: block; width: 100%; }
-=======
+
 .circle-container img { display: block; width: 100%;}
 
 
->>>>>>> aca0f5d6f234c29fe0d3335ce0ac90b0ea2a0c5e
+
 .deg0 { transform: translate(12em); 
 		-ms-tranform: translate(12em);
 		-webkit-transform: translate(12em); 
