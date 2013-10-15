@@ -34,6 +34,7 @@ body {
 
 
 
+
 .circle-container img { display: block; width: 100%;}
 
 .deg0 { transform: translate(12em); 
@@ -104,8 +105,10 @@ body {
 	display:block;width:150px;
 	height:150px;border-radius:132px;border:10px double #000;
 	font-size:50px; 
-	color:#fff;line-height:100px;
+	color:#fff;
+	line-height:100px;
 	text-align:center;
+	vertical-align: middle;
 	text-decoration:none;
 	text-shadow:0 1px 0 #fff; 
 	font-family: 'La Belle Aurore', cursive;
@@ -119,25 +122,10 @@ body {
 	background:#fff
 }
 
-
- #circleMan {
-
- 	position: relative;
-
-
-    width: 10em;
-    height: 10em;
-    padding: 20px;
-    margin-bottom:20px;
-    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
-    border-radius: 50%;
-    /*margin: 1.75em auto 0;*/
-
-
-
-color:#fff;line-height:100px;
-text-align:center;background:#000;
-background-color:green;
+#circleText{
+	position: absolute;
+	top: 75%;
+	color: yellow;
 }
 
 p{

@@ -89,7 +89,11 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="circle-container">
          
-            <div class="stylish" id="amountPeople">people</div>
+
+          
+
+            <div class="stylish" id="amountPeople"><div id="circleText"></div></div>
+
             <div class="deg288"><img class="persons " src='pics/silhouette_black.png' id="person_1"></a></div>
             <div class="deg324"><img class="persons " src='pics/silhouette_black.png' id="person_2"></a></div>
             <div class='deg0'><img class="persons" src='pics/silhouette_black.png' id="person_3"></div>
@@ -132,9 +136,15 @@
 				
 			 
 
-				<div id="map_canvas">
-
-				</div>
+        <div id="map_wrapper">
+				  <div id="map_canvas">	</div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+          </defs>
+          
+        </svg>
 
 
 
@@ -143,13 +153,21 @@
 	 </form>
 
 		<hr/>
-		<div class="row" id="hitMeButton">
+
+    <img src="pics/kate.png" style="-webkit-mask-image: url(pics/circle.svg)">
+		
+  
+
+    <div class="row" id="hitMeButton">
+
 				<button id="createObject">Hit me!</button>
 		</div>
 
 		</div>
 
-	</div>
+
+
+	</div> <!-- closing container-->
 
 
 
