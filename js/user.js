@@ -186,7 +186,7 @@ $(document).ready(function() {
 
 	//HOVERING ON PERSONS
 	$(".persons").on("mouseover", function(){
-		console.log("in mouseover");
+		
 		var currentId = parseInt(this.id.substring(7, this.id.length));
 		numPersons= currentId;
 		var nextId = "person_";
