@@ -27,12 +27,12 @@
 <div class="container">
 
 		<!-- Navbar starts -->
-
+<div class="container">
 <div class="logo">
 	Biddit.
 </div>
+</div>
 
-<!--
 
 	<div class="navbar-header">
 		
@@ -45,22 +45,15 @@
 		
 	</div>
 
-
+<nav class="navbar navbar-default" role="navigation">
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li><a href="about.html">About</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
 			<li><a href="Businesslogin">Business? Login</a></li>
 			<li class="dropdown">
-				<a href="what" class="dropdown-toggle" data-toggle="dropdown">What <b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li><a href="#">Separated link</a></li>
-					<li><a href="#">One more separated link</a></li>
-
-				</ul>
+				<a href="what">Contact<b class="caret"></b></a>
+				
 			</li>
 		</ul>
 		
@@ -69,7 +62,7 @@
 	</div>
 </nav>
 
--->
+
 <div class ="boxed">
 
 		<!-- Grid starts -->
@@ -83,13 +76,20 @@
 	</div>
 <br />
 
-  <h3>How many people in your party?</h3>
+<div class="container">
+	<h2>Welcome to Biddit!</h2>
 
-  <div class="row">
+	Here is our awesome website where you can find great offers and bla bla bla blaa bla.
+	</div>
+
+
+
+  <div class="row" id="secondRow" style="display:none;">
+  	<h3>How many people in your party?</h3>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="circle-container">
          
-            <div class="stylish">#</div>
+            <div class="stylish" id="amountPeople">people</div>
             <div class="deg288"><img class="persons " src='pics/silhouette_black.png' id="person_1"></a></div>
             <div class="deg324"><img class="persons " src='pics/silhouette_black.png' id="person_2"></a></div>
             <div class='deg0'><img class="persons" src='pics/silhouette_black.png' id="person_3"></div>
@@ -104,9 +104,24 @@
     </div>
   </div>
 
+  <br>
+  <hr>
+  <br>
+<div class="row" id="thirdRow" style="display:none;">
+  <h3>For how long time would you like to receive offers?</h3>
+				<select id="timeSpan" class="form-control" style="width:150px;">
+					<option value="15">15 minutes</option>
+					<option value="30">30 minutes</option>
+					<option value="60">1 hour</option>
+					<option value="120">2 hours</option>
+					<option value="300">5 hours</option>
+					<option value="rest">Rest of today</option>
+				</select>
+</div>
 
 
-	<div class="row" id="map">
+
+	<div class="row" id="fourthRow" id="map" style="display:none;">
 	 <form role="form">
 
 
@@ -123,15 +138,7 @@
 
 
 
-				<h3>For how long time would you like to receive offers?</h3>
-				<select id="timeSpan" class="form-control" style="width:150px;">
-					<option value="15">15 minutes</option>
-					<option value="30">30 minutes</option>
-					<option value="60">1 hour</option>
-					<option value="120">2 hours</option>
-					<option value="300">5 hours</option>
-					<option value="rest">Rest of today</option>
-				</select>
+				
 
 	 </form>
 

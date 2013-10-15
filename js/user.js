@@ -8,14 +8,18 @@ $(document).ready(function() {
 	  var numPersons;
 
 
-
+// SL API KEY 0684fdd18500c8c13433086c0dbd9943
 
 	//BUTTONS FADING
+
+
 	$("#chooseFood").on("click", function(){
 		$("#chooseEvent").fadeOut();
 		$("#chooseBars").fadeOut();
 		$("#chooseOther").fadeOut();
-		$("#map").fadeOut();
+		$("#secondRow").show();
+
+		
 
 
 	});
@@ -190,6 +194,7 @@ $(document).ready(function() {
 		var currentId = parseInt(this.id.substring(7, this.id.length));
 		numPersons= currentId;
 		var nextId = "person_";
+		$("#amountPeople").html(currentId + " people");
 		
 		
 		//going down, colouring white
