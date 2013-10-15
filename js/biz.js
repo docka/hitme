@@ -33,6 +33,7 @@ $(document).ready(function() {
                 html += "</div>";
 
                 $("#foodRequests").append(html);
+                console.log("numPeople in loop: " + message.numPeople);
                 addMarker(message.latitude, message.longitude, message.numPeople);
                 //displayChatMessage(message.numPeople, message.text); 
             }
@@ -50,14 +51,14 @@ $(document).ready(function() {
       });
 
     function addMarker(lat, lon, numPeople){
-
+        var n = numPeople.toString();
         var myLatlng = new google.maps.LatLng(lat,lon);
         var mark = "pics/marker_" + numPeople + ".png";
 
         marker = new google.maps.Marker({
               position: myLatlng,
               map: map,
-              title: numPeople,
+              title: n,
               icon: mark
         });
 

@@ -47,11 +47,35 @@ $(document).ready(function() {
         html += "</div>";
 
         $("#offers").append(html);
-        addMarker(message.latitude, message.longitude, message.numPeople);
+        //addMarker(message.latitude, message.longitude, message.numPeople);
         //displayChatMessage(message.numPeople, message.text); 
         
         
       });
+
+     //initialize map
+    var map;
+    var map_options = {
+        center: new google.maps.LatLng(59.32802898755335,18.04190864982911), 
+        zoom: 12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+   
+    map = new google.maps.Map($('#map_canvas')[0], map_options); //don't understand the need for [0], but it won't work without it
+
+    var request = {
+  			reference: 'CnRkAAAAGnBVNFDeQoOQHzgdOpOqJNV7K9-c5IQrWFUYD9TNhUmz5-aHhfqyKH0zmAcUlkqVCrpaKcV8ZjGQKzB6GXxtzUYcP-muHafGsmW-1CwjTPBCmK43AZpAwW0FRtQDQADj3H2bzwwHVIXlQAiccm7r4xIQmjt_Oqm2FejWpBxLWs3L_RoUbharABi5FMnKnzmRL2TGju6UA4k'
+		};
+
+	service = new google.maps.places.PlacesService(map);
+	service.getDetails(request, callback);
+
+	function callback(place, status) {
+	  if (status == google.maps.places.PlacesServiceStatus.OK) {
+	  	
+	    createMarker(place);
+	  }
+	}
 
 
 

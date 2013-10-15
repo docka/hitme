@@ -5,9 +5,10 @@ $(document).ready(function() {
 	  var lat;
 	  var lon;
 	  var userID;
+	  var numPersons;
 
-<<<<<<< HEAD
-	//GET USER INPUT
+
+
 
 	//BUTTONS FADING
 	$("#chooseFood").on("click", function(){
@@ -24,22 +25,11 @@ $(document).ready(function() {
 
 	});
 
-	//Transformation
 
 
 
-	
-
-	var myDataRef = new Firebase("https://hitme1.firebaseio.com/");
-		$("#messageInput").keypress(function(e){
-			if (e.keyCode == 13){
-				var name = $("#nameInput").val();
-				var text = $("#messageInput").val();
-				myDataRef.push({name: name, text: text});
-				$("#messageInput").val("");
-=======
 	  checkCookie(); //load or create cookie for identification
->>>>>>> b3bf6d3f20f4455984f927afad6ea13590ffdb6e
+
 
 	  loadGMaps(); //load map
 
@@ -52,7 +42,7 @@ $(document).ready(function() {
 	  		//yes
 	  		//console.log("Cookie exists: " + cooc);
 	  		userID = cooc.substring(cooc.indexOf("=") + 1,cooc.length);
-	  		console.log("Userid: " + userID);
+	  		//console.log("Userid: " + userID);
 	  	}
 	  	else{
 	  		//no
@@ -65,26 +55,14 @@ $(document).ready(function() {
 	  }
 
 
-		//LISTENING FOR INCOMING MESSAGES FROM FIREBASE
-	 /* myDataRef.on("child_added", function(snapshot){
-     	var message = snapshot.val();
-     	displayChatMessage(message.name, message.text); 
-      }); */
-
-		/*
-	 function displayChatMessage(name,text){
-	 	$("<div/>").text(text).prepend($("<em/>").text(name+": ")).appendTo($("#messageDiv"));
-	 	$("#messageDiv")[0].scrollTop = $("#messageDiv")[0].scrollHeight;
-	 }*/
-
 
 	//GATHER DATA AND SEND TO FIREBASE AS JSON-OBJECT
 	$("#createObject").on("click", validateInput);
 
 	function validateInput(){
 		//check if everything is alright
-		var cat = $("input[name=optionsCategory]:checked").val();
-		var nPeople = $("#numPeople")[0].value;
+		var cat = "food"; //"$("input[name=optionsCategory]:checked").val();"
+		var nPeople = numPersons; //$("#numPeople")[0].value;
 		var minutes = $("#timeSpan")[0].value;
 		if(userID == null){
 			checkCookie();
@@ -144,8 +122,8 @@ $(document).ready(function() {
 		else{
 			console.log("Geolocation not supported");
 		}
-
 	}
+
 
 	//if geolocation was a success, find and show position
 	function showLocation(position){
@@ -198,10 +176,36 @@ $(document).ready(function() {
 		function moveToLocation(lat, lon){
     		var center = new google.maps.LatLng(lat, lon);
    			map.panTo(center);
-}
+		}
 
 
 	}
+
+
+	//HOVERING ON PERSONS
+	$(".persons").on("mouseover", function(){
+		
+		var currentId = parseInt(this.id.substring(7, this.id.length));
+		numPersons= currentId;
+		var nextId = "person_";
+		
+		
+		//going down, colouring white
+		for (var i = currentId;i>=1;i--){
+			$("#" + nextId + i).attr("src", "pics/silhouette_white.png");
+
+		}
+
+		//going up, colouring black
+		for (var y = currentId +1;y<=10;y++){
+			$("#" + nextId + y).attr("src", "pics/silhouette_black.png");
+
+		}	
+		
+	});
+
+	
 	   
+
 
 });
