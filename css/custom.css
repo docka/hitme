@@ -35,7 +35,9 @@ body {
 
 .circle-container img { display: block; width: 100%;}
 
-
+.removeMe{
+	
+}
 .deg0 { transform: translate(12em); 
 		-ms-tranform: translate(12em);
 		-webkit-transform: translate(12em); 
