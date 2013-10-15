@@ -190,6 +190,7 @@ $(document).ready(function() {
 		var currentId = parseInt(this.id.substring(7, this.id.length));
 		numPersons= currentId;
 		var nextId = "person_";
+		$("#amountPeople").html(currentId);
 		
 		
 		//going down, colouring white
@@ -204,6 +205,44 @@ $(document).ready(function() {
 
 		}	
 		
+	});
+
+	//CLICKING ON PERSONS
+	$(".persons").on("click", function(){
+		
+		var currentId = parseInt(this.id.substring(7, this.id.length));
+		numPersons= currentId;
+		var nextId = "person_";
+		$("#amountPeople").html("<p id='circleText'>" + currentId + "</p>");
+		
+		
+		//going down, colouring white
+		for (var i = currentId;i>=1;i--){
+			$("#" + nextId + i).attr("src", "pics/silhouette_white.png");
+
+		}
+
+		//going up, colouring black
+		for (var y = currentId +1;y<=10;y++){
+			$("#" + nextId + y).attr("src", "pics/silhouette_black.png");
+
+		}	
+		
+	});
+
+	//HOVERING ON CIRCLE INSIDE PERSONS
+	$("#amountPeople").on("mouseover", function(){
+		//var number = $("#circleText").html();
+		//$("#amountPeople").html(number + " <p>Click</p>");
+					
+	});
+	//CLICKING ON THE NUMBER OF PEOPLE
+	$("#amountPeople").on("click", function(){
+		console.log("clicked");
+	
+		//var number = $("#amountPeople").html();
+		//$("#amountPeople").html(number + " <p>Click</p>");
+					
 	});
 
 	
