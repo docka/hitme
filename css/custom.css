@@ -11,6 +11,69 @@ body {
 
 }
 
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    border: dashed 1px;
+    border-radius: 50%;
+    margin: 1.75em auto 0;
+}
+.circle-container a {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+    pointer-events: none;
+    cursor: default;
+
+}
+.circle-container img { display: block; width: 100%; }
+.deg0 { transform: translate(12em); 
+		-ms-tranform: translate(12em);
+		-webkit-transform: translate(12em); 
+	} /* 12em = half the width of the wrapper */
+.deg36 { transform: rotate(36deg) translate(12em) rotate(-36deg); 
+	-ms-transform: rotate(36deg) translate(12em) rotate(-36deg);
+	-webkit-transform: rotate(36deg) translate(12em) rotate(-36deg);
+}
+.deg72 { transform: rotate(72deg) translate(12em) rotate(-72deg); 
+	-ms-transform: rotate(72deg) translate(12em) rotate(-72deg); 
+	-webkit-transform: rotate(72deg) translate(12em) rotate(-72deg); 
+}
+.deg108 { transform: rotate(108deg) translate(12em) rotate(-108deg); 
+	-ms-transform: rotate(108deg) translate(12em) rotate(-108deg); 
+	-webkit-transform: rotate(108deg) translate(12em) rotate(-108deg); 
+}
+.deg144 { transform: rotate(144deg) translate(12em) rotate(-144deg); 
+	-ms-transform: rotate(144deg) translate(12em) rotate(-144deg); 
+	-webkit-transform: rotate(144deg) translate(12em) rotate(-144deg); 
+}
+.deg180 { transform: rotate(180deg) translate(12em) rotate(-180deg); 
+	-ms-transform: rotate(180deg) translate(12em) rotate(-180deg);
+	-webkit-transform: rotate(180deg) translate(12em) rotate(-180deg);
+}
+.deg216 { transform: rotate(216deg) translate(12em) rotate(-216deg);
+	-ms-transform: rotate(216deg) translate(12em) rotate(-216deg);
+	-webkit-transform: rotate(216deg) translate(12em) rotate(-216deg); 
+}
+.deg252 { transform: rotate(252deg) translate(12em) rotate(-252deg); 
+	-ms-transform: rotate(252deg) translate(12em) rotate(-252deg); 
+	-webkit-transform: rotate(252deg) translate(12em) rotate(-252deg); 
+}
+.deg288 { transform: rotate(288deg) translate(12em) rotate(-288deg); 
+	-ms-transform: rotate(288deg) translate(12em) rotate(-288deg); 
+	-webkit-transform: rotate(288deg) translate(12em) rotate(-288deg); 
+}
+.deg324 { transform: rotate(324deg) translate(12em) rotate(-324deg); 
+	-ms-transform: rotate(324deg) translate(12em) rotate(-324deg);
+	-webkit-transform: rotate(324deg) translate(12em) rotate(-324deg);
+}
+
+
 
 .logo {
 	font-size:80px;
@@ -42,18 +105,6 @@ body {
 p{
 	color: white;
 }
-
-
-.persons{
-
-
-
-}
-.persons:hover{
-	
-
-}
-
 
 
 

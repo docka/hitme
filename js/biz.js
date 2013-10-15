@@ -40,6 +40,7 @@ $(document).ready(function() {
             else{
                 // not for me .. displayChatMessage("anonymous", "not for me");
                 console.log("Oops, something's wrong with the category.");
+                
             }
 
         }
