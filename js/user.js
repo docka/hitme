@@ -15,6 +15,8 @@ $(document).ready(function() {
 		$("#chooseEvent").fadeOut();
 		$("#chooseBars").fadeOut();
 		$("#chooseOther").fadeOut();
+		$("#map").fadeOut();
+
 
 	});
 
