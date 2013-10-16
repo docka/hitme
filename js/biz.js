@@ -17,7 +17,7 @@ $(document).ready(function() {
      myDataRef.on("child_added", function(snapshot){
 
         var message = snapshot.val();
-        //console.log(message);
+       
         var html = "";
         var deadline = makeDeadline(message.timespan, message.timestamp);
         if (deadline > new Date()){

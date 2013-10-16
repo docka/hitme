@@ -30,6 +30,14 @@ $(document).ready(function() {
 	  }
 
 
+    var map_options = {
+        center: new google.maps.LatLng(59.32802898755335,18.04190864982911), 
+        zoom: 12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+   
+    map = new google.maps.Map($('#map_canvas')[0], map_options); //don't understand the need for [0], but it won't work without it
+
 	 //THIS BLOCK IS LISTENING FOR OFFERS
     var myDataRef = new Firebase("https://hitme-offer.firebaseio.com/" + userID.substring(2,userID.length));
 
@@ -43,18 +51,34 @@ $(document).ready(function() {
         html += "<div class='col-lg-3'>" + message.bizName + "</div>";
         html += "<div class='col-lg-3'>" + message.bizAddress + "</div>";
         html += "<div class='col-lg-4'>" + message.offer + "</div>";
-        html += "<div class='col-lg-1'>" + message.validFor + "</div>";
+        html += "<div class='col-lg-2'>" + message.validFor + "</div>";
         html += "</div>";
 
         $("#offers").append(html);
-        //addMarker(message.latitude, message.longitude, message.numPeople);
+        addMarker(message.latitude, message.longitude, message.offer);
         //displayChatMessage(message.numPeople, message.text); 
         
         
       });
 
+
+     //plot the offers on a map
+    function addMarker(lat, lon, numPeople, offerTxt){
+        var n = numPeople.toString();
+        var myLatlng = new google.maps.LatLng(lat,lon);
+        //var mark = "pics/marker_" + numPeople + ".png";
+
+        marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: offerTxt
+        });
+
+    }
+
+
      //initialize map
-    var map;
+    /*var map;
     var map_options = {
         center: new google.maps.LatLng(59.32802898755335,18.04190864982911), 
         zoom: 12,
@@ -76,7 +100,7 @@ $(document).ready(function() {
 	    createMarker(place);
 	  }
 	}
-
+*/
 
 
 	
