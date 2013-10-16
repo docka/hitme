@@ -209,6 +209,22 @@ $(document).ready(function() {
 
 	//FIRST SECTION 
 	//choosing the category - so far food is the only one that works
+	$(".category").on("mouseover", function(){
+		var fileName = this.src;
+		var prefix = fileName.substring(0, fileName.length - 5);
+		var suffix = fileName.substring(fileName.length - 5, fileName.length);;
+		
+		this.src = prefix + "w.png";
+	});
+
+	$(".category").on("mouseout", function(){
+		var fileName = this.src;
+		var prefix = fileName.substring(0, fileName.length - 5);
+		var suffix = fileName.substring(fileName.length - 5, fileName.length);;
+		
+		this.src = prefix + "b.png";
+	});
+
 	$("#chooseFood").on("click", function(){
 		
 		//$("#chooseEvent").fadeOut();
